@@ -89,7 +89,7 @@ public class MyReclcyeGridActivity extends Activity {
 //        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(4,
 //                StaggeredGridLayoutManager.HORIZONTAL));
         //这句就是添加我们自定义的分隔线
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+        mRecyclerView.addItemDecoration(new DividerGridItemDecoration(this,10,R.color.colorAccent));
 
         /**
          * adapter
