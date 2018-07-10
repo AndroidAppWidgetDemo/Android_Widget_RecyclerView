@@ -7,7 +7,7 @@
 ### RecyclerView + PagerSnapHelper：
 https://blog.csdn.net/xiaxl/article/details/80984464
 
-![这里写图片描述](https://img-blog.csdn.net/2018071013231399?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fpd3VzaGVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![enter image description here](https://raw.githubusercontent.com/AndroidAppWidgetDemo/Android_Widget_RecyclerView/master/image/2018-07-10%2013_14_16.gif)
 
 
 
