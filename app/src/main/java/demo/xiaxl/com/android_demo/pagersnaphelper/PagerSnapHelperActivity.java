@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -37,42 +38,43 @@ public class PagerSnapHelperActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycle_pager_activity);
 
-
         // -----------创建数据集-------------
         for (int i = 1; i < 100; i++) {
             mDataList.add("item" + i);
         }
-
         // 纵向List
         initUI();
 
     }
 
-    /**
-     * 纵向List
-     */
     public void initUI() {
-        /**
-         *RecyclerView
-         */
         // ---RecyclerView---
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_vertical);
         mRecyclerView.setNestedScrollingEnabled(false);
         // PagerSnapHelper
         PagerSnapHelper snapHelper = new PagerSnapHelper() {
+            // 在 Adapter的 onBindViewHolder 之后执行
             @Override
             public int findTargetSnapPosition(RecyclerView.LayoutManager layoutManager, int velocityX, int velocityY) {
+                // TODO 找到对应的Index
+                Log.e("xiaxl: ", "---findTargetSnapPosition---");
                 int targetPos = super.findTargetSnapPosition(layoutManager, velocityX, velocityY);
                 Log.e("xiaxl: ", "targetPos: " + targetPos);
+
+                Toast.makeText(PagerSnapHelperActivity.this, "滑到到 " + targetPos + "位置", Toast.LENGTH_SHORT).show();
 
                 return targetPos;
             }
 
+            // 在 Adapter的 onBindViewHolder 之后执行
             @Nullable
             @Override
             public View findSnapView(RecyclerView.LayoutManager layoutManager) {
+                // TODO 找到对应的View
+                Log.e("xiaxl: ", "---findSnapView---");
                 View view = super.findSnapView(layoutManager);
                 Log.e("xiaxl: ", "tag: " + view.getTag());
+
                 return view;
             }
         };
@@ -84,7 +86,7 @@ public class PagerSnapHelperActivity extends Activity {
         //
         mRecyclerView.setLayoutManager(linearLayoutManager);
 
-        //
+        // TODO 这么写是为了获取RecycleView的宽高
         mRecyclerView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {

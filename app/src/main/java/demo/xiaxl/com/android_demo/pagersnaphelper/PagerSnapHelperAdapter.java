@@ -34,8 +34,7 @@ public class PagerSnapHelperAdapter extends RecyclerView.Adapter<PagerSnapHelper
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        Log.d("xiaxl: ", "---onCreateViewHolder---");
-        Log.d("xiaxl: ", "viewType: " + viewType);
+        Log.e("xiaxl: ", "---onCreateViewHolder---");
         // 创建一个View，简单起见直接使用系统提供的布局，就是一个TextView
         View view = View.inflate(viewGroup.getContext(), R.layout.recycle_pager_item, null);
 
@@ -54,8 +53,8 @@ public class PagerSnapHelperAdapter extends RecyclerView.Adapter<PagerSnapHelper
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        Log.d("xiaxl: ", "---onBindViewHolder---");
-        Log.d("xiaxl: ", "position: " + position);
+        Log.e("xiaxl: ", "---onBindViewHolder---");
+
         // 绑定数据到ViewHolder上
         viewHolder.itemView.setTag(position);
         //
